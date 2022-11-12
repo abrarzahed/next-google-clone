@@ -10,7 +10,7 @@ export default function signin({ providers }) {
           <div className="grid justify-center gap-6" key={provider.name}>
             <img
               className="w-[320px] mx-auto text-center  object-cover"
-              src="https://cdn2.downdetector.com/static/uploads/logo/Google-new_19.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
               alt=""
             />
             <p className="text-sm text-center italic">

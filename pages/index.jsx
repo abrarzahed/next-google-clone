@@ -1,5 +1,7 @@
 import Head from "next/head";
+import Image from "next/image";
 import AppHeader from "../components/AppHeader";
+import { MagnifyingGlassIcon, MicrophoneIcon } from "@heroicons/react/20/solid";
 
 export default function Home() {
   return (
@@ -14,6 +16,31 @@ export default function Home() {
       <AppHeader />
 
       {/* body */}
+
+      <main className="h-[70vh] grid items-center justify-center">
+        <form className="grid gap-8 justify-center items-center">
+          <Image
+            width="320"
+            height="80"
+            className="w-[320px] mx-auto text-center object-cover"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+            alt="Google logo"
+          />
+          <div className="flex bg-white border hover:shadow-xl rounded-full px-5 py-4 gap-5 items-center justify-between">
+            <MagnifyingGlassIcon className="h-6" />
+            <input
+              type="text"
+              placeholder="Search Google or type a URL"
+              className="w-full min-w-[440px] focus:outline-none"
+            />
+            <MicrophoneIcon className="h-6" />
+          </div>
+          <div className="flex justify-center gap-6">
+            <button className="btn">Google Search</button>
+            <button className="btn">I'm Feeling Lucky</button>
+          </div>
+        </form>
+      </main>
 
       {/* footer */}
     </div>
