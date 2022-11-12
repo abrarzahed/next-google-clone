@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-gray-50;
+}
+
+@layer components {
+  .link {
+    @apply hover:underline cursor-pointer;
+  }
+}

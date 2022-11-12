@@ -1,4 +1,5 @@
 import Head from "next/head";
+import AppHeader from "../components/AppHeader";
 
 export default function Home() {
   return (
@@ -9,7 +10,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Hello google clone</h1>
+      {/* header */}
+      <AppHeader />
+
+      {/* body */}
+
+      {/* footer */}
     </div>
   );
 }
