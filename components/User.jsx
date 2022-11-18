@@ -2,13 +2,13 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function User({ className }) {
   const { data: session } = useSession();
-  console.log(session);
+  // console.log(session);
   if (session) {
     return (
       <>
         <p
           onClick={() => signOut()}
-          className="hover:bg-gray-200 cursor-pointer px-2 py-1"
+          className={`bg-gray-100 block font-bold hover:bg-gray-200 text-gray-600 cursor-pointer px-2 py-1 ${className}`}
         >
           {session.user.name}
         </p>
