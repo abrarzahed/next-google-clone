@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import AppHeader from "../components/AppHeader";
 import { MagnifyingGlassIcon, MicrophoneIcon } from "@heroicons/react/20/solid";
+import AppFooter from "../components/AppFooter";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
       </main>
 
       {/* footer */}
+      <AppFooter />
     </div>
   );
 }
