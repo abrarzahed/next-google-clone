@@ -3,8 +3,21 @@ import Image from "next/image";
 import AppHeader from "../components/AppHeader";
 import { MagnifyingGlassIcon, MicrophoneIcon } from "@heroicons/react/20/solid";
 import AppFooter from "../components/AppFooter";
+import { useRouter } from "next/router";
+import { useRef } from "react";
 
 export default function Home() {
+  const router = useRouter();
+  const searchInputRef = useRef(null);
+
+  const search = (e) => {
+    e.preventDefault();
+    const term = searchInputRef.current.value;
+
+    if (!term.trim()) return;
+    router.push(`/search?term=${term.trim()}`);
+  };
+
   return (
     <div>
       <Head>
@@ -30,6 +43,7 @@ export default function Home() {
           <div className="flex bg-white border hover:shadow-xl rounded-full px-5 py-4 gap-5 items-center justify-between">
             <MagnifyingGlassIcon className="h-6" />
             <input
+              ref={searchInputRef}
               type="text"
               placeholder="Search Google or type a URL"
               className="w-full min-w-[440px] focus:outline-none"
@@ -37,7 +51,9 @@ export default function Home() {
             <MicrophoneIcon className="h-6" />
           </div>
           <div className="flex justify-center gap-6">
-            <button className="btn">Google Search</button>
+            <button onClick={search} className="btn">
+              Google Search
+            </button>
             <button className="btn">I'm Feeling Lucky</button>
           </div>
         </form>
