@@ -23,7 +23,7 @@ export default function SearchHeader() {
     router.push(`/search?term=${term.trim()}&searchType=`);
   };
   return (
-    <header className="sticky top-0 bg-white">
+    <header className="sticky top-0 px-4 bg-white">
       <div className="flex w-full p-6 items-center justify-between">
         <Image
           width="140"
