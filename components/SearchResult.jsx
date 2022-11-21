@@ -1,4 +1,6 @@
 import Parser from "html-react-parser";
+import Pagination from "./Pagination";
+
 export default function SearchResult({ results }) {
   return (
     <div>
@@ -7,8 +9,8 @@ export default function SearchResult({ results }) {
         {results.searchInformation.formattedSearchTime}) seconds
       </p>
 
-      {results.items.map((result) => (
-        <div key={result.formattedUrl} className="max-w-2xl mb-8">
+      {results.items.map((result, i) => (
+        <div key={i} className="max-w-2xl mb-8">
           <div className="group">
             <a className="text-sm truncate " href={result.formattedUrl}>
               {result.displayLink}
@@ -25,6 +27,7 @@ export default function SearchResult({ results }) {
           <p className="text-gray-600">{Parser(result.htmlSnippet)}</p>
         </div>
       ))}
+      <Pagination />
     </div>
   );
 }

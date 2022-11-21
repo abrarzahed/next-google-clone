@@ -34,12 +34,12 @@ export default function SearchHeader() {
           onClick={() => router.push("/")}
         />
 
-        <form className="flex border hover:shadow-xl rounded-full px-5 py-4 gap-5 items-center justify-between">
+        <form className="flex border hover:shadow-xl rounded-full px-5 py-3 gap-5 items-center justify-between">
           <input
             type="text"
             defaultValue={router.query.term}
             ref={searchInputRef}
-            className="w-full min-w-[440px] jus focus:outline-none"
+            className="w-full min-w-[440px] focus:outline-none"
           />
           <XMarkIcon
             onClick={clearInput}

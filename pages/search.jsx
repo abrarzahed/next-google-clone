@@ -3,6 +3,7 @@ import SearchHeader from "../components/SearchHeader";
 import SearchResult from "../components/SearchResult";
 import res from "../res";
 import { useRouter } from "next/router";
+import ImageResults from "../components/ImageResults";
 
 export default function search({ results }) {
   console.log(results);
@@ -17,14 +18,18 @@ export default function search({ results }) {
       {/* search header */}
       <SearchHeader />
       <main className="max-w-5xl px-4 lg:px-0 mx-auto mt-4 ">
-        {/* search result */}
-        <SearchResult results={results} />
+        {router.query.searchType === "image" ? (
+          <ImageResults results={results} />
+        ) : (
+          <SearchResult results={results} />
+        )}
       </main>
     </div>
   );
 }
 
 export async function getServerSideProps(context) {
+  const startIndex = context.query.start || 1;
   const markData = true;
   const data = markData
     ? res
@@ -33,7 +38,7 @@ export async function getServerSideProps(context) {
           process.env.API_KEY
         }&cx=${process.env.CONTEXT_KEY}&q=${context.query.term}${
           context.query.searchType && "&searchType=image"
-        }`
+        }&start=${startIndex}`
       ).then((response) => response.json());
 
   return {
