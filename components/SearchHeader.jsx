@@ -7,6 +7,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/20/solid";
 import User from "./User";
+import SearchHeaderOptions from "./SearchHeaderOptions";
 
 export default function SearchHeader() {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function SearchHeader() {
     const term = searchInputRef.current.value;
 
     if (!term.trim()) return;
-    router.push(`/search?term=${term.trim()}`);
+    router.push(`/search?term=${term.trim()}&searchType=`);
   };
   return (
     <header className="sticky top-0 bg-white">
@@ -51,6 +52,7 @@ export default function SearchHeader() {
 
         <User className="" />
       </div>
+      <SearchHeaderOptions />
     </header>
   );
 }
