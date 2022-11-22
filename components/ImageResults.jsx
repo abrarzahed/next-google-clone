@@ -18,7 +18,7 @@ export default function ImageResults({ results }) {
                 className="group-hover:underline"
                 href={result.image.contextLink}
               >
-                <h4 className="text-2xl my-2 truncate">{result.title}</h4>
+                <h4 className="text-2xl my-1 truncate">{result.title}</h4>
               </a>
               <a className="truncate" href={result.image.contextLink}>
                 <p>{result.displayLink}</p>

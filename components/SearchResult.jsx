@@ -9,7 +9,7 @@ export default function SearchResult({ results }) {
         {results.searchInformation.formattedSearchTime}) seconds
       </p>
 
-      {results.items.map((result, i) => (
+      {results?.items?.map((result, i) => (
         <div key={i} className="max-w-2xl mb-8">
           <div className="group">
             <a className="text-sm truncate " href={result.formattedUrl}>
