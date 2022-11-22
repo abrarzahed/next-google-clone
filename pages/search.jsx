@@ -30,7 +30,7 @@ export default function search({ results }) {
 
 export async function getServerSideProps(context) {
   const startIndex = context.query.start || 1;
-  const markData = true;
+  const markData = false;
   const data = markData
     ? res
     : await fetch(
